@@ -43,7 +43,7 @@ namespace :fias do
   desc 'Fias loading'
 
   def process(prefix, object)
-    dir = "/media/andrey/288F0E940B0A97F9/egron1/files/fias/upload/"
+    dir = "#{Rails.root}/files/fias/upload/"
     Dir.foreach(dir) { |file|
       if (file.start_with? prefix)
         parser = Nokogiri::XML::SAX::Parser.new(object)
